@@ -6,7 +6,7 @@
 #    By: pfrey <pfrey@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/06/07 15:20:37 by pfrey             #+#    #+#              #
-#    Updated: 2017/06/07 17:24:24 by pfrey            ###   ########.fr        #
+#    Updated: 2017/06/07 17:38:13 by pfrey            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,17 @@ SRC = ./srcs/main.c \
 	  ./srcs/ft_mouse_hook.c \
 	  ./srcs/ft_key.c \
 	  ./srcs/ft_esc.c \
+
+# COLORS
+C_NO = "\033[00m"
+C_OK = "\033[34m"
+C_GOOD = "\033[32m"
+C_ERROR = "\033[31m"
+C_WARN = "\033[33m"
+
+# DBG MESSAGE
+SUCCESS = [ $(C_GOOD)OK$(C_NO) ]
+OK = [ $(C_OK)OK$(C_NO) ]
 
 OBJ = $(SRC:.c=.o)
 	LFLAGS = -Llibft -lft -framework OpenGL -framework AppKit -Llib-mlx -lmlx
@@ -37,21 +48,21 @@ lib-mlx/libmlx.a:
 
 $(NAME) : $(OBJ)
 	@gcc $(CFLAGS) -o $(NAME) $^ $(LFLAGS)
-	@echo "\033[31m|||------- ✔ Creating $(NAME) executable ---------|||\033[0m"
+	@echo $(SUCCESS) "\t\t" "Compiling " $(NAME)
 
 %.o: %.c
 	@gcc $^ $(CFLAGS) -c -o $@
 
 clean :
-	@echo "\033[31m|||------- ❌ Removing Object Files $(NAME) -------|||\033[0m"
 	@rm -f $(OBJ)
 	@make clean -C libft
 	@make clean -C lib-mlx
+	@echo $(OK) "\t\t Cleaning $(NAME)"
 
 fclean : clean
-	@echo "\033[31m|||------- ❌ Removing $(NAME) --------------------|||\033[0m"
 	@rm -f $(NAME)
 	@make fclean -C libft
 	@make fclean -C lib-mlx
+	@echo $(OK) "\t\t Delete $(NAME)"
 
 re : fclean all
