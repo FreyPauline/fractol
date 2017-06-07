@@ -1,44 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_print_head.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfrey <pfrey@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 15:22:39 by pfrey             #+#    #+#             */
-/*   Updated: 2017/06/07 17:24:37 by pfrey            ###   ########.fr       */
+/*   Updated: 2017/06/07 17:33:51 by pfrey            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fract.h"
-
-void	fps(t_mlx *mlx)
-{
-	static double	last_time;
-	static int		img;
-	static int		save;
-	double			current_time;
-	char			*fps;
-
-	current_time = time(NULL);
-	if (mlx->init == 0)
-	{
-		last_time = current_time;
-		save = 0;
-		img = 0;
-		mlx->init = 1;
-	}
-	img++;
-	if (last_time != current_time)
-	{
-		last_time = current_time;
-		save = img;
-		img = 0;
-	}
-	fps = ft_itoa(save);
-	mlx_string_put(mlx->mlx, mlx->win, 945, 270, 0x0000FF, fps);
-	ft_strdel(&fps);
-}
 
 void	ft_print_head(void)
 {
