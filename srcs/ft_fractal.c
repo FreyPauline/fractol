@@ -6,7 +6,7 @@
 /*   By: pfrey <pfrey@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 15:22:04 by pfrey             #+#    #+#             */
-/*   Updated: 2017/06/07 17:21:04 by pfrey            ###   ########.fr       */
+/*   Updated: 2017/06/07 18:19:27 by pfrey            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	init_var_julia(t_mlx *mlx)
 	mlx->c_i = 0.01;
 	mlx->iter = 200;
 	mlx->motion = 0;
-	mlx->color = 0xFF12F9;
+	mlx->color = 0xD213B5;
 	mlx->zoom = 200;
 }
 
@@ -120,6 +120,20 @@ void	init_var_mandelbrot(t_mlx *mlx)
 	mlx->y2 = 1.2;
 	mlx->iter = 100;
 	mlx->motion = 0;
-	mlx->color = 0xFF12F9;
+	mlx->color = 0xE8F613;
+	mlx->zoom = 200;
+}
+
+void	init_var_bship(t_mlx *mlx)
+{
+	mlx->x = 0;
+	mlx->y = 0;
+	mlx->x1 = -2.02;
+	mlx->x2 = 0.6;
+	mlx->y1 = -2.02;
+	mlx->y2 = 1.2;
+	mlx->iter = 100;
+	mlx->motion = 0;
+	mlx->color = 0xE6192F;
 	mlx->zoom = 200;
 }

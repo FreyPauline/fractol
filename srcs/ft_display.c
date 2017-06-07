@@ -6,7 +6,7 @@
 /*   By: pfrey <pfrey@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 15:22:28 by pfrey             #+#    #+#             */
-/*   Updated: 2017/06/07 17:20:40 by pfrey            ###   ########.fr       */
+/*   Updated: 2017/06/07 18:13:11 by pfrey            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void		put_pixel_to_img(t_mlx *mlx)
 	if (mlx->i == mlx->iter)
 		pixel_to_image(mlx, mlx->x, mlx->y, 0);
 	else
-		pixel_to_image(mlx, mlx->x, mlx->y, mlx->color * mlx->i / mlx->iter);
+		pixel_to_image(mlx, mlx->x, mlx->y, mlx->color * mlx->i / mlx->iter * 18);
 }

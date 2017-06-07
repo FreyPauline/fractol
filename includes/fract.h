@@ -6,7 +6,7 @@
 /*   By: pfrey <pfrey@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/07 15:20:06 by pfrey             #+#    #+#             */
-/*   Updated: 2017/06/07 17:09:16 by pfrey            ###   ########.fr       */
+/*   Updated: 2017/06/07 18:16:20 by pfrey            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void				init_fract(t_mlx *mlx);
 void				init_start_mlx(t_mlx *mlx);
 void				init_var_julia(t_mlx *mlx);
 void				init_var_mandelbrot(t_mlx *mlx);
+void				init_var_bship(t_mlx *mlx);
 void				init_img(t_mlx *mlx);
 void				put_pixel_to_img(t_mlx *mlx);
 
